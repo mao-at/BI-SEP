@@ -9,6 +9,7 @@ flask-restful = "*"
 flask-sqlalchemy = "*"
 pyodbc = "*"
 pytest = "*"
+openai = "*"
 
 [dev-packages]
 

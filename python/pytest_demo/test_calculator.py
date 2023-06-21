@@ -23,5 +23,7 @@ def test_divide():
 
 def test_divide_by_zero():
     calculator = Calculator()
+    # check to make sure that ValueError is raised when dividing by zero
     with pytest.raises(ValueError):
         calculator.divide(10, 0)
+
