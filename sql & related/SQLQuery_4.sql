@@ -154,7 +154,7 @@ ROLLBACK
 --Properties
 --ACID
 --A: Atomicity - work is atomic, all or nothing
---C: Consistency - whatever happends in the mid of the transaction, this property will never leave our db in half-completed state
+--C: Consistency - a transaction should leave your database in a consistent state - no integirty requirements should be violated
 --I: Isolation - locking the resource -> so different transactions do not interfere with eachother
 --D: Durability - once the trasnaction is completed, the changes it has made to the db will be permanent
 

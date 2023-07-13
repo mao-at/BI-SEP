@@ -116,7 +116,8 @@ ORDER BY UnitPrice DESC
 
 --list top 5 customers who created the most total revenue
 SELECT TOP 5 c.CustomerID, c.ContactName, SUM(od.UnitPrice * od.Quantity) AS TotalRevenue
-FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID JOIN [Order Details] od ON od.OrderID = o.OrderID
+FROM Customers c JOIN Orders o ON c.CustomerID = o.CustomerID 
+JOIN [Order Details] od ON od.OrderID = o.OrderID
 GROUP BY c.CustomerID, c.ContactName
 ORDER BY TotalRevenue DESC
 

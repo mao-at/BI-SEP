@@ -61,11 +61,12 @@ SELECT *
 FROM tempdb.sys.tables
 
 --temp tables vs. table variables
---1. both are stored in tempdb
+--1. both are stored in tempdb, but tables var will be in memory only unless it gets too big
 --2. scope: local/global, current batch
 --3. size: >100 rows, <100 rows
 --4. do not use temp tables in stored procedures(supported but not recommended) or user defined functions, but we can use table varialbes in sp or udf
-	--mostly due to performance concerns
+	--table stats from temp table might cause sp to be recompiled often
+	--temp table always goes inside tempdb, might cause resource contention if sp is called often
 
 
 
@@ -237,7 +238,7 @@ END
 
 --many to many relationship
 --Student table and Class table
---need to create a conjunction/junction/join table in between 
+--need to create a conjunction/junction/join/joint table in between 
 --create an enrollment
 	--which classes is a particular student taking
 	--which students are enrolled in a particular class
@@ -253,7 +254,7 @@ END
 --     102  01	100
 
 --Class:
---CID, CName, SId
+--CID, CName, SId1
 --01, SQL
 --02, C#
 

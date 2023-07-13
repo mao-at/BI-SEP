@@ -9,7 +9,7 @@ SELECT *
 FROM Employees
 
 --2. SELECT a list of columns
-SELECT EmployeeID, FirstName, LastName, Title, ReportsTo
+SELECT EmployeeID, FirstName, LastName, Title, ReportsTo as my_table
 FROM Employees
 
 SELECT e.EmployeeID, e.FirstName, e.LastName, e.Title, e.ReportsTo
@@ -144,11 +144,14 @@ INSERT INTO TestSalary VALUES
 (NULL, 500),
 (NULL,NULL)
 
+select * from TestSalary
+
 SELECT EId, Salary, Comm, Salary + Comm AS TotalCompensation
 FROM TestSalary
 
 SELECT EId, Salary, Comm, IsNull(Salary, 0) + IsNull(Comm, 0) AS TotalCompensation
 FROM TestSalary
+
 
 --LIKE Operator: create a search expression
 --1. Work with % wildcard character: % is used to substitute to 0 or more characters
@@ -203,8 +206,9 @@ ORDER BY 2 DESC, 1 DESC
 --JOIN: combine rows from two or more tables, based on a related column between them
 --1. INNER JOIN: will return the records that have matching values in both tables
 --find employees who have deal with any orders
-SELECT e.EmployeeID, e.FirstName + ' ' + e.LastName AS FullName, o.OrderDate
+SELECT e.EmployeeID, o.EmployeeID,e.FirstName + ' ' + e.LastName AS FullName, o.OrderDate
 FROM Employees AS e INNER JOIN Orders AS o ON e.EmployeeID = o.EmployeeID
+
 
 SELECT e.EmployeeID, e.FirstName + ' ' + e.LastName AS FullName, o.OrderDate
 FROM Employees AS e JOIN Orders AS o ON e.EmployeeID = o.EmployeeID
@@ -220,12 +224,17 @@ FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID
 --join multiple tables:
 --get customer name, the corresponding employee who is responsible for this order, and the order date
 SELECT c.ContactName AS CustomerName, e.FirstName + ' ' + e.LastName AS EmployeeName, o.OrderDate
-FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID
+FROM Customers c 
+INNER JOIN Orders o ON c.CustomerID = o.CustomerID 
+INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID
 
 
 --add detailed information about quantity and price, join Order details
 SELECT c.ContactName AS CustomerName, e.FirstName + ' ' + e.LastName AS EmployeeName, o.OrderDate, od.Quantity, od.UnitPrice
-FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID INNER JOIN [Order Details] od ON od.OrderID = o.OrderID
+FROM Customers c 
+INNER JOIN Orders o ON c.CustomerID = o.CustomerID 
+INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID 
+INNER JOIN [Order Details] od ON od.OrderID = o.OrderID
 
 
 --2. OUTER JOIN
@@ -284,14 +293,14 @@ go
 select * from a
 select * from b
 select *
-from a cross join b
+from a full join b on a.num=b.num
 
 --Batch Directives
 CREATE DATABASE SEP
-
+go
 USE SEP
 
-CREATE TABLE Employee(Id int, EName varchar(20), Salary money)
+CREATE TABLE guest.Employee(Id int, EName varchar(20), Salary money)
 
 SELECT *
 FROM Employee
