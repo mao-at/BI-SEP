@@ -12,9 +12,9 @@ Every calculation and transformation of Data has to happen through a Python Scri
 
 ### 1.  If you are using Matplotlib
 
-![Alt text](image.png)
+<img width="326" alt="image" src="https://github.com/mao-at/BI-SEP/assets/77296054/a753abb2-6a6f-4c8e-ae9d-970a5396dfaf">
 
 
 ### 2. If you are using Tableau
 
-![Alt text](image-1.png)
+<img width="322" alt="image" src="https://github.com/mao-at/BI-SEP/assets/77296054/c04d21d1-ca2a-47c8-999f-0bf01f4b1e2a">
