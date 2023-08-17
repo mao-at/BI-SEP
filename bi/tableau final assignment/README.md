@@ -1,3 +1,19 @@
+## Before You Begin
+
+This assignment will be saved to your Tableau Public account rather than GitHub.
+
+If you haven't already, be sure to create a Tableau Public account .
+
+The free tier of Tableau only lets you save to their public server. This means that each time you save your file it will be uploaded to your Tableau Public profile.
+
+You are able to load and continue working on the same workbook.
+
+When you are finished with your assignment, you will turn in the URL to your Tableau Public workbook along with any additional files used for your analysis
+
+Additional files for example - If you have used python file to clean up or manipulate the data. Please upload the file to the assignment along with the tableau profile link.
+
+Here is link for citibike data resources - https://citibikenyc.com/system-data
+
 ## Background
 
 Congratulations on your new job! As the new lead analyst for the [New York Citi Bike](https://en.wikipedia.org/wiki/Citi_Bike) Program, you are now responsible for overseeing the largest bike sharing program in the United States. In your new role, you will be expected to generate regular reports for city officials looking to publicize and improve the city program.
