@@ -26,3 +26,9 @@ python/azure_function_demo/host.json
 python/pytest_demo/__pycache__/calculator.cpython-39.pyc
 python/pytest_demo/__pycache__/test_calculator_with_fixture.cpython-39-pytest-7.4.0.pyc
 python/pytest_demo/__pycache__/test_calculator.cpython-39-pytest-7.4.0.pyc
+python/__pycache__/test.cpython-310.pyc
+*.pyc
+sql & related/.vs/slnx.sqlite
+sql & related/.vs/VSWorkspaceState.json
+sql & related/.vs/sql & related/v15/.ssms_suo
+python/solutions
